@@ -3,6 +3,8 @@ import LayOut from "./LayOut.vue";
 import HeaderV from "./HeaderFlow.vue";
 import Resume from "./Resume/IndexResume.vue";
 import Movements from "./Movements/IndexMovement.vue";
+import Action from "./ActionCash.vue";
+import GraphicCash from "./Resume/GraphicCash.vue";
 
 export default {
   components: {
@@ -10,7 +12,9 @@ export default {
     HeaderV,
     Resume,
     Movements,
-  },
+    Action,
+    GraphicCash,
+},
   data() {
     return {
       amount: null,
@@ -106,8 +110,12 @@ export default {
         :total-amount="1000000"
         :amount="amount"
       >
-        <template #graphic> graphic </template>
-        <template #action> action </template>
+        <template #graphic>
+          <GraphicCash />
+        </template>
+        <template #action>
+          <Action />
+        </template>
       </Resume>
     </template>
     <template #movements>
